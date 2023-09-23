@@ -11,12 +11,12 @@ export default function Home() {
     }, []);
 
     const loadUsers = async () => {
-         const result= await axios.get("http://54.166.226.23:8080/api/doctor/all");
+         const result= await axios.get("http://54.166.226.23:8092/api/doctor/all");
          setUsers(result.data);
     };
 
     const deleteUser = async (id)=>{
-        await axios.delete(`http://54.166.226.23:8080/api/doctor/delete/${id}`)
+        await axios.delete(`http://54.166.226.23:8092/api/doctor/delete/${id}`)
         loadUsers()
     }
 
